@@ -69,8 +69,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           )
 
            break;
-          default:
-            console.log('TESTE DEU ERRO')
+          default:           
             throw new Error('Unhandled event.')
        }
      } catch (error) {
