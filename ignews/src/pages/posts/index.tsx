@@ -51,7 +51,9 @@ export const getStaticProps: GetStaticProps = async () => {
     pageSize: 100,
   })
 
-  const posts = response.results.map((post) => {
+  const {next_page, results} = response;
+
+  const posts = results.map((post) => {
     return {
       slug: post.uid,
       title: RichText.asText(post.data.title),
@@ -65,7 +67,10 @@ export const getStaticProps: GetStaticProps = async () => {
   })
   return {
     props: {
-      posts
-    }
+      postsPagination: {
+        next_page: next_page,
+        results: posts,
+      },
+    },
   }
 }
