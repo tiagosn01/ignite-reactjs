@@ -30,11 +30,11 @@ export default function Posts({ postsPagination }: PostProps) {
         <div className={styles.posts}>
           {postsPagination.posts.map((post) => (
             <Link key={post.slug} href={`/posts/${post.slug}`}>
-            <a  >
-              <time>{post.updatedAt}</time>
-              <strong>{post.title}</strong>
-              <p>{post.excerpt}</p>
-            </a>
+              <a>
+                <time>{post.updatedAt}</time>
+                <strong>{post.title}</strong>
+                <p>{post.excerpt}</p>
+              </a>
             </Link>
           ))}       
         </div>

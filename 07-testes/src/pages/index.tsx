@@ -8,7 +8,7 @@ import { stripe } from '../services/stripe';
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   }
 }
 
@@ -25,7 +25,7 @@ export default function Home({product }: HomeProps) {
           <p>
             Get access to all the publications <br />
             <span>for {product.amount} month</span>
-            <SubscribeButton priceId={product.priceId} />
+            <SubscribeButton />
           </p>
          </section>
          <img src="/images/avatar.svg" alt="Girl coding"/>
